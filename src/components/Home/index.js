@@ -1,3 +1,4 @@
+import UserInfo from '../UserInfo'
 import './index.css'
 
 const blogsList = [
@@ -35,7 +36,21 @@ const blogsList = [
   },
 ]
 const Home = () => (
-  <div className="home-container">Render UserInfo and BlogList</div>
+  <div className="home-container">
+    <div>
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/profile-img.png"
+        alt="profile"
+      />
+      <h1>Wade Warren</h1>
+      <p>Software Developer at UK</p>
+    </div>
+    <ul>
+      {blogsList.map(each => (
+        <UserInfo blogList={each} key={each.id} />
+      ))}
+    </ul>
+  </div>
 )
 
 export default Home
